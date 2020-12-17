@@ -70,38 +70,47 @@
    #VDPAU_DRIVER=nvidia
    ```
    
-   # Firefox va-api
+   Firefox va-api
    [Firefox ArchWiki](https://wiki.archlinux.org/index.php/Firefox#Hardware_video_acceleration)
-   # Tweaks#Enable WebRender compositor
+   Tweaks: Enable WebRender compositor
    about:config
    gfx.webrender.all -> true
    media.ffmpeg.vaapi.enabled -> true
    media.ffvpx.enabled -> false
    
-   # Check if it's on:
-   $ MOZ_X11_EGL=1 MOZ_LOG="PlatformDecoderModule:5" firefox 2>&1 | grep 'VA-API'
-   $ vainfo --display drm --device /dev/dri/renderD128
+   - Check if it's on:
+   ```
+   MOZ_X11_EGL=1 MOZ_LOG="PlatformDecoderModule:5" firefox 2>&1 | grep 'VA-API'
+   vainfo --display drm --device /dev/dri/renderD128
+   ```
    
-   # If you see error:
-   # add "i915" module in /etc/mkinitcpio.conf
-   $ sudo vim /etc/mkinitcpio.conf
-     MODULE = "i915"
+   If you see error:
+   add "i915" module in /etc/mkinitcpio.conf
+   ```
+   sudo vim /etc/mkinitcpio.conf
+   MODULE = "i915"
+   ```
+   ```
+   sudo mkinitcpio -P
+   ```
    
-   $ sudo mkinitcpio -P
-   
-   # enhanced-h264ify add-on firefox
+   enhanced-h264ify add-on firefox
    [enhanced-h264ify firefox](https://addons.mozilla.org/en-US/firefox/addon/enhanced-h264ify)
    
-   # verify gstreamer plugin
-   $ gst-inspect-1.0 vaapi
-   $ gst-inspect-1.0 vdpau
+   verify gstreamer plugin
+   ```
+   gst-inspect-1.0 vaapi
+   gst-inspect-1.0 vdpau
+   ```
+   ```
+   env MOZ_X11_EGL=1                              # add this flag in firefox launcher
+   ```
    
-   # env MOZ_X11_EGL=1                              # add this flag in firefox launcher
-   
-   # chromium-vaapi
+   chromium-vaapi
    [Chromium ArchWiki](https://wiki.archlinux.org/index.php/chromium#Hardware_video_acceleration)
    
-   $ vim ~/.config/chromium-flags.conf
+   ```
+   vim ~/.config/chromium-flags.conf
      --ignore-gpu-blocklist 
      --use-gl=desktop 
      --enable-gpu-rasterization 
@@ -113,15 +122,20 @@
      --enable-accelerated-video-decode 
      --disable-gpu-driver-bug-workarounds 
      --disable-smooth-scrolling 
-     
-   $ intel_gpu_top                             # check hw acceleration usage
-   $ nvidia-smi -q | grep Decoder 
-   $ watch -n 1 'nvidia-smi -q | grep Decoder'
+   ```  
+   check hw acceleration usage
+   ```  
+   intel_gpu_top                             
+   nvidia-smi -q | grep Decoder 
+   watch -n 1 'nvidia-smi -q | grep Decoder'
+   ```
     
-   # check on chrome
-   # chrome://gpu
-   # chrome://media-internals
-    
+   check on chrome
+   ```
+   chrome://gpu
+   chrome://media-internals
+   ```
+   
    # enhanced-h264ify add-on chromium
    [enhanced-h264ify chromium](https://chrome.google.com/webstore/detail/enhanced-h264ify/omkfmpieigblcllmkgbflkikinpkodlk)
     
