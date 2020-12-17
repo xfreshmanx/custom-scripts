@@ -55,18 +55,20 @@
    ```
    
 5. Hardware acceleration of firefox, chromium, mpv
-   $ sudo pacman -S libva-intel-driver nvidia-utils libvdpau-va-gl libva-utils vdpauinfo
-   $ yay -S libva-vdpau-driver-chromium                               # chromium on nvidia
-   $ mpv --hwdec=auto https://www.youtube.com/watch?v=MQM7CNoAsBI                            # test
-   $ vainfo
-   $ sudo vim /etc/environment
-     # Intel
-     LIBVA_DRIVER_NAME=i965
-     VDPAU_DRIVER=va_gl
+   ```
+   sudo pacman -S libva-intel-driver nvidia-utils libvdpau-va-gl libva-utils vdpauinfo
+   yay -S libva-vdpau-driver-chromium                               # chromium on nvidia
+   mpv --hwdec=auto https://www.youtube.com/watch?v=MQM7CNoAsBI                            # test
+   vainfo
+   sudo vim /etc/environment
+   # Intel
+   LIBVA_DRIVER_NAME=i965
+   VDPAU_DRIVER=va_gl
 
-     # NVIDIA
-     #LIBVA_DRIVER_NAME=vdpau
-     #VDPAU_DRIVER=nvidia
+   # NVIDIA
+   #LIBVA_DRIVER_NAME=vdpau
+   #VDPAU_DRIVER=nvidia
+   ```
    
    # Firefox va-api
    [Firefox ArchWiki](https://wiki.archlinux.org/index.php/Firefox#Hardware_video_acceleration)
