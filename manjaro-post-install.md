@@ -38,18 +38,21 @@
    source .zshrc
    ```
    
+   ```
+   mkdir -p ~/Downloads/MesloLGS && wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf  https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P ~/Downloads/MesloLGS
    
-   $ mkdir -p ~/Downloads/MesloLGS && wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf  https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P ~/Downloads/MesloLGS
-   $ cd ~/Downloads/
-   $ sudo cp -r MesloLGS /usr/share/fonts/
-   $ fc-cache
+   cd ~/Downloads/
+   sudo cp -r MesloLGS /usr/share/fonts/
+   fc-cache
+   ```
    
-   
-   $ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k                    
-   $ vim .zshrc
+   ```
+   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k                    
+   vim .zshrc
      ZSH_THEME="powerlevel10k/powerlevel10k"                              # change theme
-   $ source .zshrc
-   $ git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull                              # check update powerlevel10k
+   source .zshrc
+   git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull                              # check update powerlevel10k
+   ```
    
 5. Hardware acceleration of firefox, chromium, mpv
    $ sudo pacman -S libva-intel-driver nvidia-utils libvdpau-va-gl libva-utils vdpauinfo
