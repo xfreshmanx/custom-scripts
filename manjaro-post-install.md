@@ -2,7 +2,9 @@
 
 2. Update
 
-  `sudo pacman -Syu`
+  ```
+  sudo pacman -Syu
+  ```
   
 3. Install needed packages from manjaro-kde-post-install.sh
 
@@ -15,14 +17,15 @@
    zsh-newuser-install -f
    ```
    
-
-   $ vim .zshrc                             # add below 2 lines in the end
+  ```
+   vim .zshrc                             # add below 2 lines in the end
      autoload -Uz promptinit                    
      promptinit
-   $ source .zshrc
-   $ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-   $ git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-   $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
+   source .zshrc
+   sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+   git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+   ```
    
    $ vim .zshrc                            # add below lines to plugin
      git
