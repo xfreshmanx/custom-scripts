@@ -3,18 +3,18 @@
 2. Update
 
   `sudo pacman -Syu`
+  
 3. Install needed packages from manjaro-kde-post-install.sh
 
 4. Zsh configeration
-   `which $SHELL`
+   `which $SHELL
    
-   `sudo pacman -S zsh zsh-completions`
+   sudo pacman -S zsh zsh-completions
+   zsh`
    
-   `zsh`
+   autoload -Uz zsh-newuser-install
    
-   `autoload -Uz zsh-newuser-install`
-   
-   `zsh-newuser-install -f`
+   zsh-newuser-install -f`
    
 
    $ vim .zshrc                             # add below 2 lines in the end
