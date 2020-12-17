@@ -143,8 +143,8 @@
    [Manjaro Swapfile](https://wiki.manjaro.org/index.php/Swap#Using_a_Swapfile)
    First create and intialize the file to hold the swap. For example, to create a 4GB swapfile, you could use the command:
    ```
-   $ sudo fallocate -l 4G /swapfile
-   $ sudo mkswap /swapfile
+   sudo fallocate -l 4G /swapfile
+   sudo mkswap /swapfile
    ```
    Set the appropriate permissions on the file. It should be readable and writable only by root. This can be done with the command: 
    ```
@@ -152,7 +152,7 @@
    ```
    Next we need to enable the swapfile with the swapon command. Following our example above this could be done with: 
    ```
-   $ sudo swapon /swapfile
+   sudo swapon /swapfile
    ```
    In order to ensure that the swap is enabled at boot we can add an entry to /etc/fstab. You can add the line to ftab manually or using the command: 
    ```
@@ -161,7 +161,7 @@
    
    ```
    findmnt -no UUID -T /swapfile
-   filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'
+   sudo filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'
    sudo vim /etc/default/grub
       resume=UUID=your_UUID resume_offset=your_offset # add this
    sudo update-grub
@@ -194,7 +194,7 @@
    
    ```
    ```
-   $ sudo vim /etc/sddm.conf
+   sudo vim /etc/sddm.conf
    [XDisplay]
    # Xsetup script path
    # A script to execute when starting the display server
@@ -265,30 +265,30 @@
   
 13. conda autocompletions
    ```
-   $ git clone https://github.com/esc/conda-zsh-completion ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/conda-zsh-completion
-   $ vim .zshrc
+   git clone https://github.com/esc/conda-zsh-completion ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/conda-zsh-completion
+   vim .zshrc
    plugins -> conda-zsh-completion                          # add plugins
-   $ source .zshrc
+   source .zshrc
    ```
  
 14. Mount in ext4/btrfs/ntfs
 ```
    # ext4
    # check users group 
-   $ awk -F':' '/users/{print $4}' /etc/group 
+   awk -F':' '/users/{print $4}' /etc/group 
    # Check UUID- 
-   $ sudo blkid 
+   sudo blkid 
    
-   $ sudo vim /etc/fstab 
-   $ UUID=4208875b-ffea-4376-afd8-b0bbd6bcb0e3    /run/media/pulsar/LocalDisk    ext4    auto,users,exec    0    0
-   $ grep -i --color 'users' /etc/group
-   $ add user to group users 
-   $ sudo usermod -a -G users pulsar 
+   sudo vim /etc/fstab 
+   # UUID=4208875b-ffea-4376-afd8-b0bbd6bcb0e3    /run/media/pulsar/LocalDisk    ext4    auto,users,exec    0    0
+   grep -i --color 'users' /etc/group
+   # add user to group users 
+   sudo usermod -a -G users pulsar 
    
    #check 
-   $ awk -F':' '/users/{print $4}' /etc/group 
-   $ sudo mkdir -p /run/media/pulsar/LocalDisk 
-   $ sudo chown pulsar:users -R /run/media/pulsar/LocalDisk 
+   awk -F':' '/users/{print $4}' /etc/group 
+   sudo mkdir -p /run/media/pulsar/LocalDisk 
+   sudo chown pulsar:users -R /run/media/pulsar/LocalDisk 
    ```
    ```
    # Btrfs
@@ -341,13 +341,18 @@
 
 16. Edit fat32/ext4 label
    ```
-   $ sudo pacman -S mtools
-   $ lsblk
-   $ sudo mlabel -i /dev/sde1 ::Fat32_NewName  
+   sudo pacman -S mtools
+   lsblk
+   sudo mlabel -i /dev/sde1 ::Fat32_NewName 
+   ```
+   ```
+   lsblk
+   sudo e2label /dev/device new-label-name-here
    ```
  
 17. Add .desktop icon in plasma
-   Home 
+
+Home 
 ```
 [Desktop Entry] 
 URL[$e]=$HOME 
@@ -357,7 +362,7 @@ Name[en_US]=Home
 Name=Home 
 Type=Link  
 ```  
-   Trash
+Trash
 ``` 
 [Desktop Entry] 
 Name=Trash 
