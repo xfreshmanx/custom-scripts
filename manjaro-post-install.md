@@ -7,10 +7,15 @@
 
 4. Zsh configeration
    `which $SHELL`
+   
    `sudo pacman -S zsh zsh-completions`
+   
    `zsh`
+   
    `autoload -Uz zsh-newuser-install`
+   
    `zsh-newuser-install -f`
+   
 
    $ vim .zshrc                             # add below 2 lines in the end
      autoload -Uz promptinit                    
