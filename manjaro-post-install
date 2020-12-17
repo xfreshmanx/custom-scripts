@@ -214,17 +214,96 @@
    $ vim .zshrc
    plugins -> conda-zsh-completion                          # add plugins
    $ source .zshrc
+ 
+14. Mount in ext4/btrfs/ntfs
+   # ext4
+   # check users group 
+   $ awk -F':' '/users/{print $4}' /etc/group 
+   # Check UUID- 
+   $ sudo blkid 
    
+   $ sudo vim /etc/fstab 
+   $ UUID=4208875b-ffea-4376-afd8-b0bbd6bcb0e3    /run/media/pulsar/LocalDisk    ext4    auto,users,exec    0    0
+   $ grep -i --color 'users' /etc/group
+   $ add user to group users 
+   $ sudo usermod -a -G users pulsar 
    
+   #check 
+   $ awk -F':' '/users/{print $4}' /etc/group 
+   $ sudo mkdir -p /run/media/pulsar/LocalDisk 
+   $ sudo chown pulsar:users -R /run/media/pulsar/LocalDisk 
    
+   # Btrfs
+   check ‘users’ group 
+   $ awk -F':' '/users/{print $4}' /etc/group 
+
+   # if user doesn’t exist to users group add user to ‘users’ group 
+   $ sudo usermod -a -G users pulsar 
+
+   # if ‘users’ group doesn’t exist create it and check again. 
+   # Check UUID of the drive- 
+   $ sudo blkid 
+   # add mount location if doesn’t exist. I will mount in /run/media/user_name/LocalDisk. Since this is the Manjaro’s default mount location. 
+   # create folder if doesn’t exist. example- 
+   $ sudo mkdir /run/media/user_name 
+   $ sudo mkdir /run/media/user_name/LocalDisk 
+
+   # give permission to user for this folder 
+   $ sudo chown user_name:users -R /run/media/user_name/LocalDisk 
+
+   # add drive to fstab to autologin in startup 
+   $ sudo vim /etc/fstab 
+
+   # add this line at the end. 
+   $ UUID=YOUR_UUID /run/media/user_name/LocalDisk btrfs auto,users,exec 0 0 
+
+   # Chekckout what this flags does in here. 
+   # NOTE: Same steps can be taken to mount ext4 as user. Edit btrfs to ext4 in fstab. 
    
-   
-   
-   
-   
-   
-   
-   
+   ### NTFS
+   $ sudo blkid
+   $ sudo vim /etc/fstab
+   $ UUID=xxx /media/my_label ntfs-3g defaults,auto,uid=1000,gid=1000,umask=002 0 0
+  
+15. Keyserver manjaro/arch 
+   $ vim ~/.gnupg/gpg.conf
+    no-greeting  
+    no-permission-warning  
+    lock-never  
+ 
+    keyserver hkps://keyserver.ubuntu.com  
+    #keyserver pool.sks-keyservers.net  
+    keyserver-options timeout=10  
+    keyserver-options import-clean  
+    keyserver-options no-self-sigs-only 
+
+16. Edit fat32/ext4 label
+   $ sudo pacman -S mtools
+   $ lsblk
+   $ sudo mlabel -i /dev/sde1 ::Fat32_NewName  
+ 
+17. Add .desktop icon in plasma
+   # Home 
+`
+[Desktop Entry] 
+URL[$e]=$HOME 
+GenericName=Home Folder 
+Icon=user-home 
+Name[en_US]=Home 
+Name=Home 
+Type=Link  
+`  
+   # Trash
+`   
+[Desktop Entry] 
+Name=Trash 
+Comment=Contains removed files 
+Icon=user-trash-full 
+EmptyIcon=user-trash 
+Type=Link 
+URL=trash:/ 
+OnlyShowIn=KDE     
+`   
    
 
    
