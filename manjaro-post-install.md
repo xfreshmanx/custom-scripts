@@ -17,7 +17,7 @@
    zsh-newuser-install -f
    ```
    
-  ```
+   ```
    vim .zshrc                             # add below 2 lines in the end
      autoload -Uz promptinit                    
      promptinit
@@ -25,16 +25,18 @@
    sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
    git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-   ```
+    ```
+   ``
+   vim .zshrc                            # add below lines to plugin
    
-   $ vim .zshrc                            # add below lines to plugin
-     git
-     sudo
-     archlinux
-     zsh-syntax-highlighting
-     zsh-autosuggestions
-   $ source .zshrc
+   git
+   sudo
+   archlinux
+   zsh-syntax-highlighting
+   zsh-autosuggestions
    
+   source .zshrc
+    ```
    
    
    $ mkdir -p ~/Downloads/MesloLGS && wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf  https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P ~/Downloads/MesloLGS
