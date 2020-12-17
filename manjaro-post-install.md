@@ -136,54 +136,70 @@
    chrome://media-internals
    ```
    
-   # enhanced-h264ify add-on chromium
+   enhanced-h264ify add-on chromium
    [enhanced-h264ify chromium](https://chrome.google.com/webstore/detail/enhanced-h264ify/omkfmpieigblcllmkgbflkikinpkodlk)
     
 6. Swapfile 4G 
    [Manjaro Swapfile](https://wiki.manjaro.org/index.php/Swap#Using_a_Swapfile)
-   # First create and intialize the file to hold the swap. For example, to create a 4GB swapfile, you could use the command: 
+   First create and intialize the file to hold the swap. For example, to create a 4GB swapfile, you could use the command:
+   ```
    $ sudo fallocate -l 4G /swapfile
    $ sudo mkswap /swapfile
-   # Set the appropriate permissions on the file. It should be readable and writable only by root. This can be done with the command: 
-   $ sudo chmod u=rw,go= /swapfile
-   # Next we need to enable the swapfile with the swapon command. Following our example above this could be done with: 
+   ```
+   Set the appropriate permissions on the file. It should be readable and writable only by root. This can be done with the command: 
+   ```
+   sudo chmod u=rw,go= /swapfile
+   ```
+   Next we need to enable the swapfile with the swapon command. Following our example above this could be done with: 
+   ```
    $ sudo swapon /swapfile
-   # In order to ensure that the swap is enabled at boot we can add an entry to /etc/fstab. You can add the line to ftab manually or using the command: 
-   $ sudo bash -c "echo /swapfile none swap defaults 0 0 >> /etc/fstab"
+   ```
+   In order to ensure that the swap is enabled at boot we can add an entry to /etc/fstab. You can add the line to ftab manually or using the command: 
+   ```
+   sudo bash -c "echo /swapfile none swap defaults 0 0 >> /etc/fstab"
+   ```
    
-   $ findmnt -no UUID -T /swapfile
-   $ filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'
-   $ sudo vim /etc/default/grub
-     resume=UUID=your_UUID resume_offset=your_offset
-   $ sudo update-grub
-   $ sudo vim /etc/mkinitcpio.conf
+   ```
+   findmnt -no UUID -T /swapfile
+   filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'
+   sudo vim /etc/default/grub
+      resume=UUID=your_UUID resume_offset=your_offset # add this
+   sudo update-grub
+   sudo vim /etc/mkinitcpio.conf
      resume -> HOOKS                              # add resume in HOOKS
-   $ sudo mkinitcpio -P  
+   sudo mkinitcpio -P  
+   ```
    
 7. # Smplayer: Advance -> mpv ->  --no-osd-bar
 8. Optimus Manager:
    (Video Tutorial)[https://www.youtube.com/watch?v=RZdWVntmvI8]
    (Optimus Manager)[https://github.com/Askannz/optimus-manager]
    
-   $ sudo pacman -S yay
-   $ yay -Syu
-   $ yay -S nvidia
-   $ yay -S base-devel
-   $ yay -S optimus-manager optimus-manager-qt
-   $ sudo systemctl enable optimus-manager
+   ```
+   sudo pacman -S yay
+   yay -Syu
+   yay -S nvidia
+   yay -S base-devel
+   yay -S optimus-manager optimus-manager-qt
+   sudo systemctl enable optimus-manager
+   ```
    
 9. Xrandr setup
+   ```
    $ sudo vim /usr/share/sddm/scripts/Xsetup
    
    #!/bin/sh
    # Xsetup - run as root before the login dialog appears
    xrandr --output eDP-1-1 --mode 1366x768 --pos 0x0 --rotate normal --output VGA-1-1 --mode 1600x900 --pos 1366x0 --rotate normal
    
+   ```
+   ```
    $ sudo vim /etc/sddm.conf
    [XDisplay]
    # Xsetup script path
    # A script to execute when starting the display server
    DisplayCommand=/usr/share/sddm/scripts/Xsetup
+   ```
 
 10. Lutris 
    go preference
@@ -191,19 +207,27 @@
    enable -> feral gamemode
 
    Environment variables:
+   ```
    MANGOHUD=1
    __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1
+   ```
 
    Command Prefix:
-   $ gamemoderun DXVK_HUD=60
-
+   ```
+   gamemoderun DXVK_HUD=60
+   ```
+   
 11. POP Os theme Gnome Manjaro/Arch
-   $ Yay -S pop-gtk-theme-bin pop-icon-theme-git pop-sound-theme-bin ttf-fira-sans ttf-fira-mono ttf-roboto-slab pop-gnome-shell-theme-bin 
-   $ sudo pacman -S gnome-shell-extension-pop-shell
+   ```
+   Yay -S pop-gtk-theme-bin pop-icon-theme-git pop-sound-theme-bin ttf-fira-sans ttf-fira-mono ttf-roboto-slab pop-gnome-shell-theme-bin 
+   sudo pacman -S gnome-shell-extension-pop-shell
+   ```
 
 12. Set Banglad fonts to Nirmala UI
-   $ ~/.config/fontconfig/conf.d/50-custom-bangla.conf
-`
+   ```
+   ~/.config/fontconfig/conf.d/50-custom-bangla.conf
+   ```
+   ```
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
 <fontconfig>
@@ -233,17 +257,22 @@
 </match>
 <!-- Bangla (bn) ends -->
 </fontconfig>
-`   
+```
+   ```
    $ fc-cache
    $ LANG=bd_BD fc-match   
+  ```
   
 13. conda autocompletions
+   ```
    $ git clone https://github.com/esc/conda-zsh-completion ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/conda-zsh-completion
    $ vim .zshrc
    plugins -> conda-zsh-completion                          # add plugins
    $ source .zshrc
+   ```
  
 14. Mount in ext4/btrfs/ntfs
+```
    # ext4
    # check users group 
    $ awk -F':' '/users/{print $4}' /etc/group 
@@ -260,7 +289,8 @@
    $ awk -F':' '/users/{print $4}' /etc/group 
    $ sudo mkdir -p /run/media/pulsar/LocalDisk 
    $ sudo chown pulsar:users -R /run/media/pulsar/LocalDisk 
-   
+   ```
+   ```
    # Btrfs
    check ‘users’ group 
    $ awk -F':' '/users/{print $4}' /etc/group 
@@ -287,14 +317,17 @@
 
    # Chekckout what this flags does in here. 
    # NOTE: Same steps can be taken to mount ext4 as user. Edit btrfs to ext4 in fstab. 
-   
-   ### NTFS
+   ```
+   ```
+   # NTFS
    $ sudo blkid
    $ sudo vim /etc/fstab
    $ UUID=xxx /media/my_label ntfs-3g defaults,auto,uid=1000,gid=1000,umask=002 0 0
+   ```
   
 15. Keyserver manjaro/arch 
-   $ vim ~/.gnupg/gpg.conf
+    ```
+    $ vim ~/.gnupg/gpg.conf
     no-greeting  
     no-permission-warning  
     lock-never  
@@ -304,15 +337,18 @@
     keyserver-options timeout=10  
     keyserver-options import-clean  
     keyserver-options no-self-sigs-only 
+    ```
 
 16. Edit fat32/ext4 label
+   ```
    $ sudo pacman -S mtools
    $ lsblk
    $ sudo mlabel -i /dev/sde1 ::Fat32_NewName  
+   ```
  
 17. Add .desktop icon in plasma
-   # Home 
-`
+   Home 
+```
 [Desktop Entry] 
 URL[$e]=$HOME 
 GenericName=Home Folder 
@@ -320,9 +356,9 @@ Icon=user-home
 Name[en_US]=Home 
 Name=Home 
 Type=Link  
-`  
-   # Trash
-`   
+```  
+   Trash
+``` 
 [Desktop Entry] 
 Name=Trash 
 Comment=Contains removed files 
@@ -331,7 +367,7 @@ EmptyIcon=user-trash
 Type=Link 
 URL=trash:/ 
 OnlyShowIn=KDE     
-`   
+```
    
 
    
