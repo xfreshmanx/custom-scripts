@@ -2,9 +2,9 @@
 
 2. Update
 
-  ```
-  sudo pacman -Syu
-  ```
+   ```
+   sudo pacman -Syu
+   ```
   
 3. Install needed packages from manjaro-kde-post-install.sh
 
@@ -26,7 +26,7 @@
    git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
     ```
-   ``
+   ```
    vim .zshrc                            # add below lines to plugin
    
    git
@@ -36,7 +36,7 @@
    zsh-autosuggestions
    
    source .zshrc
-    ```
+   ```
    
    
    $ mkdir -p ~/Downloads/MesloLGS && wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf  https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P ~/Downloads/MesloLGS
