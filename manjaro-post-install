@@ -2,11 +2,11 @@
 
 2. Update
 
-  `$ sudo pacman -Syu`
+  $ sudo pacman -Syu
 3. Install needed packages from manjaro-kde-post-install.sh
 
 4. Zsh configeration
-  `$ which $SHELL
+   $ which $SHELL
    $ sudo pacman -S zsh zsh-completions
    $ zsh
    $ autoload -Uz zsh-newuser-install
@@ -19,7 +19,7 @@
    $ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
    $ git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
    $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
-   `
+   
    $ vim .zshrc                            # add below lines to plugin
      git
      sudo
@@ -27,21 +27,21 @@
      zsh-syntax-highlighting
      zsh-autosuggestions
    $ source .zshrc
-   `
    
-   `
+   
+   
    $ mkdir -p ~/Downloads/MesloLGS && wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf  https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P ~/Downloads/MesloLGS
    $ cd ~/Downloads/
    $ sudo cp -r MesloLGS /usr/share/fonts/
    $ fc-cache
-   `
-   `
+   
+   
    $ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k                    
    $ vim .zshrc
      ZSH_THEME="powerlevel10k/powerlevel10k"                              # change theme
    $ source .zshrc
    $ git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull                              # check update powerlevel10k
-   `
+   
 5. Hardware acceleration of firefox, chromium, mpv
    $ sudo pacman -S libva-intel-driver nvidia-utils libvdpau-va-gl libva-utils vdpauinfo
    $ yay -S libva-vdpau-driver-chromium                               # chromium on nvidia
@@ -59,10 +59,10 @@
    # Firefox va-api
    [Firefox ArchWiki](https://wiki.archlinux.org/index.php/Firefox#Hardware_video_acceleration)
    # Tweaks#Enable WebRender compositor
-   `about:config`
-   `gfx.webrender.all` -> true
-   `media.ffmpeg.vaapi.enabled` -> true
-   `media.ffvpx.enabled` -> false
+   about:config
+   gfx.webrender.all -> true
+   media.ffmpeg.vaapi.enabled -> true
+   media.ffvpx.enabled -> false
    
    # Check if it's on:
    $ MOZ_X11_EGL=1 MOZ_LOG="PlatformDecoderModule:5" firefox 2>&1 | grep 'VA-API'
