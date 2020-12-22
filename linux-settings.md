@@ -4,6 +4,7 @@ MOUNT:
 sudo mkdir -p /run/media/"$(whoami)"/iso
 sudo mount "$FILE" /run/media/"$(whoami)"/iso
 `
+
 UMOUNT:
 `
 sudo umount /run/media/pulsar/iso
