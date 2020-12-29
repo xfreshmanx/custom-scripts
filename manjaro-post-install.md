@@ -19,13 +19,13 @@
    
    ```
    vim .zshrc                             # add below 2 lines in the end
-     autoload -Uz promptinit                    
-     promptinit
+   autoload -Uz promptinit                    
+   promptinit
    source .zshrc
    sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
    git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-    ```
+   ```
    ```
    vim .zshrc                            # add below lines to plugin
    
@@ -49,7 +49,7 @@
    ```
    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k                    
    vim .zshrc
-     ZSH_THEME="powerlevel10k/powerlevel10k"                              # change theme
+   ZSH_THEME="powerlevel10k/powerlevel10k"                              # change theme
    source .zshrc
    git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull                              # check update powerlevel10k
    ```
@@ -111,17 +111,17 @@
    
    ```
    vim ~/.config/chromium-flags.conf
-     --ignore-gpu-blocklist 
-     --use-gl=desktop 
-     --enable-gpu-rasterization 
-     --enable-oop-rasterization 
-     --gpu-rasterization-msaa-sample-count=0 
-     --enable-zero-copy 
-     --force-dark-mode 
-     --enable-features=WebUIDarkMode 
-     --enable-accelerated-video-decode 
-     --disable-gpu-driver-bug-workarounds 
-     --disable-smooth-scrolling 
+   --ignore-gpu-blocklist 
+   --use-gl=desktop 
+   --enable-gpu-rasterization 
+   --enable-oop-rasterization 
+   --gpu-rasterization-msaa-sample-count=0 
+   --enable-zero-copy 
+   --force-dark-mode 
+   --enable-features=WebUIDarkMode 
+   --enable-accelerated-video-decode 
+   --disable-gpu-driver-bug-workarounds 
+   --disable-smooth-scrolling 
    ```  
    check hw acceleration usage
    ```  
@@ -163,10 +163,10 @@
    findmnt -no UUID -T /swapfile
    sudo filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'
    sudo vim /etc/default/grub
-      resume=UUID=your_UUID resume_offset=your_offset # add this
+   resume=UUID=your_UUID resume_offset=your_offset # add this
    sudo update-grub
    sudo vim /etc/mkinitcpio.conf
-     resume -> HOOKS                              # add resume in HOOKS
+   resume -> HOOKS                              # add resume in HOOKS
    sudo mkinitcpio -P  
    ```
    
