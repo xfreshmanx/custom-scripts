@@ -38,7 +38,7 @@
    zsh-autosuggestions
    colored-man-pages
    command-not-found
-   fast-syntax-highlighting
+   #fast-syntax-highlighting
 
    
    source .zshrc
