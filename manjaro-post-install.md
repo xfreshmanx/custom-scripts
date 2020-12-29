@@ -31,6 +31,7 @@
    vim .zshrc                            # add below lines to plugin
    
    git
+   z
    sudo
    archlinux
    zsh-syntax-highlighting
@@ -38,6 +39,7 @@
    colored-man-pages
    command-not-found
    fast-syntax-highlighting
+
    
    source .zshrc
    ```
