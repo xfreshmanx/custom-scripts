@@ -34,6 +34,9 @@
    archlinux
    zsh-syntax-highlighting
    zsh-autosuggestions
+   colored-man-pages
+   command-not-found
+   
    
    source .zshrc
    ```
@@ -261,7 +264,7 @@
    ```
    $ fc-cache
    $ LANG=bd_BD fc-match   
-  ```
+   ```
   
 13. conda autocompletions
    ```
@@ -272,7 +275,7 @@
    ```
  
 14. Mount in ext4/btrfs/ntfs
-```
+   ```
    # ext4
    # check users group 
    awk -F':' '/users/{print $4}' /etc/group 
