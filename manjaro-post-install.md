@@ -170,7 +170,7 @@
    sudo mkinitcpio -P  
    ```
    
-7. # Smplayer: Advance -> mpv ->  --no-osd-bar
+7. Smplayer: Advance -> mpv ->  ```--no-osd-bar```
 8. Optimus Manager:
    (Video Tutorial)[https://www.youtube.com/watch?v=RZdWVntmvI8]
    (Optimus Manager)[https://github.com/Askannz/optimus-manager]
