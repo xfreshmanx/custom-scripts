@@ -6,6 +6,6 @@ $ sudo systemctl enable libvirtd.service
 $ sudo systemctl start libvirtd.service  
 
 Change location of storage  
-https://serverfault.com/questions/840519/how-to-change-the-default-storage-pool-from-libvirt
+https://serverfault.com/a/840520
 
 
