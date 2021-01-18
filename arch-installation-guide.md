@@ -77,6 +77,72 @@
     
 #### KDE Plasma
 
+    pacman -S plasma sddm
+    echo "exec startkde" > ~/.xinitrc
+    systemctl enable sddm
+
+#### Cinnamon
+
+    echo "exec cinnamon-session" > ~/.xinitrc
+    sudo pacman -S cinnamon mdm
+    systemctl enable mdm
+
+#### Mate
+
+    echo "exec mate-session" > ~/.xinitrc
+    sudo pacman -S mate lightdm lightdm-gtk-greeter
+    systemctl enable lightdm
+#### Budgie
+```
+echo "export XDG_CURRENT_DESKTOP=Budgie:GNOME" > ~/.xinitrc
+echo "exec budgie-desktop" >> ~/.xinitrc
+sudo pacman -S budgie-desktop lightdm lightdm-gtk-greeter
+systemctl enable lightdm
+```
+#### Openbox
+```
+echo "exec openbox-session" > ~/.xinitrc
+sudo pacman -S openbox lightdm lightdm-gtk-greeter
+systemctl enable lightdm
+```
+#### i3
+```
+echo "exec i3"  > ~/.xinitrc
+pacman -S i3 rxvt-unicode dmenu
+```
+#### Awesome
+```
+echo "exec awesome"  > ~/.xinitrc
+sudo pacman -S awesome
+```
+**Deepin**
+```
+echo "exec startdde"  > ~/.xinitrc
+sudo pacman -S deepin
+# Also, edit the file `/etc/lightdm/lightdm.conf` to have this line:
+
+greeter-session=lightdm-deepin-greeter
+```
+**LXDE**
+```
+echo "exec startlxde"  > ~/.xinitrc
+sudo pacman -S lxdm-gtk3 lxdm
+```
+
+### Start GUI
+To test whether your graphical environment works, run:
+```
+startx
+```
+
+
+
+
+
+
+
+
+
 
 
 
