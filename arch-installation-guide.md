@@ -1,8 +1,8 @@
 ## SIMPLE ARCH LINUX INSTALLATION GUIDE
 
-[Arch Wiki](https://wiki.archlinux.org/index.php/installation_guide)
-[itsfoss.com guide arch linux installation](https://itsfoss.com/install-arch-linux/)
-[averagelinuxuser.com guide arch linux installation](https://averagelinuxuser.com/a-step-by-step-arch-linux-installation-guide)
+[Arch Wiki](https://wiki.archlinux.org/index.php/installation_guide)  
+[itsfoss.com guide arch linux installation](https://itsfoss.com/install-arch-linux/)  
+[averagelinuxuser.com guide arch linux installation](https://averagelinuxuser.com/a-step-by-step-arch-linux-installation-guide)  
 
    
     ls /sys/firmware/efi/efivars
