@@ -1,4 +1,4 @@
-
+1
 ## SIMPLE ARCH LINUX INSTALLATION GUIDE
 
 [Arch Wiki](https://wiki.archlinux.org/index.php/installation_guide)  
@@ -51,7 +51,7 @@
     ## Uncomment to allow members of group wheel to execute any command
     %wheel ALL=(ALL) ALL
     
-    pacman -S grub efibootmgr
+    pacman -S grub efibootmgr dosfstools os-prober mtools
     mkdir /boot/efi
     mount /dev/sda1 /boot/efi
     grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
