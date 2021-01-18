@@ -138,8 +138,8 @@ startx
 ### FOR KVM
 [Tutorial](https://forum.proxmox.com/threads/getting-qemu-agent-to-start-at-boot.70380)  
 
-sudo pacman -S qemu-guest-agent
-qemu-ga -D >> /etc/qemu/qemu-ga.conf
+    sudo pacman -S qemu-guest-agent
+    qemu-ga -D >> /etc/qemu/qemu-ga.conf
 
 
 
