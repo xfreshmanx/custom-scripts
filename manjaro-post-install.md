@@ -379,6 +379,12 @@ Type=Link
 URL=trash:/ 
 OnlyShowIn=KDE     
 ```
+
+18. Firefox Settings
+```
+about:config
+widget.use-xdg-desktop-portal = true                              # For KDE picker 
+```
    
 
    
