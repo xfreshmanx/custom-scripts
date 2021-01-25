@@ -384,6 +384,7 @@ OnlyShowIn=KDE
 ```
 about:config
 widget.use-xdg-desktop-portal = true                              # For KDE picker 
+browser.newtabpage.activity-stream.logowordmark.alwaysVisible = true
 ```
    
 
