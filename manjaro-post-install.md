@@ -64,7 +64,7 @@
    ```
    sudo pacman -S libva-intel-driver nvidia-utils libvdpau-va-gl libva-utils vdpauinfo
    yay -S libva-vdpau-driver-chromium                               # chromium on nvidia
-   mpv --hwdec=auto https://www.youtube.com/watch?v=MQM7CNoAsBI                            # test
+   mpv --hwdec=auto https://www.youtube.com/watch?v=MQcXEWPesAw                            # test
    vainfo
    sudo vim /etc/environment
    # Intel
