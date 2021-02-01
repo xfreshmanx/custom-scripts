@@ -4,9 +4,11 @@
  - Create userChrome.css file in
    profile folder
  - Download favicon.ico in profile folder. ex- https://www.chd4.com/favicon.ico
- - write in userChrome.css
+ - write in userChrome.css 
+ - 
 
-    @namespace url(http ://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul); 
+    @namespace url(http ://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+     
      
      /* Bookmark icon (favicon) */
     .bookmark-item[label="CrazyHD"] image { 
