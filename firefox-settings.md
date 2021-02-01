@@ -19,5 +19,6 @@ userChrome.css
      background:url('crazyhd-favicon.ico')!important; 
     }
 
-   
+**Signing a Firefox Extension:**
+https://stackoverflow.com/questions/34608873/how-to-signing-a-firefox-extension
 
