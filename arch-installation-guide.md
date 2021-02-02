@@ -56,7 +56,8 @@
     mount /dev/sda1 /boot/efi
     grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
     grub-mkconfig -o /boot/grub/grub.cfg
-    pacman -S xorg
+    pacman -S xorg networkmanager
+    systemctl enable NetworkManager.service
 
 ## Desktop Environment
 
