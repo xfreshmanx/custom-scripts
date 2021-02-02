@@ -1,5 +1,6 @@
 **Change fav icon for bookmarks in firefox:**
-
+ 
+ - about:config - "toolkit.legacyUserProfileCustomizations.stylesheets = true"
  - Create chrome folder in profile folder. 
  - Create userChrome.css file in
    profile folder
