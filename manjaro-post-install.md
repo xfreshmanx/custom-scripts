@@ -78,12 +78,14 @@
    
    Firefox va-api
    [Firefox ArchWiki](https://wiki.archlinux.org/index.php/Firefox#Hardware_video_acceleration)
-   Tweaks: Enable WebRender compositor
-   about:config
-   gfx.webrender.all -> true
-   media.ffmpeg.vaapi.enabled -> true
-   media.ffvpx.enabled -> false
-   
+
+       Tweaks: Enable WebRender compositor
+       about:config  
+       gfx.webrender.all -> true  
+       media.ffmpeg.vaapi.enabled -> true  
+       media.ffvpx.enabled -> false  
+       
+
    - Check if it's on:
    ```
    MOZ_X11_EGL=1 MOZ_LOG="PlatformDecoderModule:5" firefox 2>&1 | grep 'VA-API'
@@ -397,4 +399,5 @@ browser.newtabpage.activity-stream.logowordmark.alwaysVisible = true
      
      
      
+
 
