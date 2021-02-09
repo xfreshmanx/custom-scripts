@@ -227,6 +227,8 @@
    
 11. POP Os theme Gnome Manjaro/Arch
    ```
+   yay -S  pop-theme
+   OR
    Yay -S pop-gtk-theme-bin pop-icon-theme-git pop-sound-theme-bin ttf-fira-sans ttf-fira-mono ttf-roboto-slab pop-gnome-shell-theme-bin 
    sudo pacman -S gnome-shell-extension-pop-shell
    ```
