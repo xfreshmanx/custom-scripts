@@ -23,3 +23,8 @@ userChrome.css
 **Signing a Firefox Extension:**
 https://stackoverflow.com/questions/34608873/how-to-signing-a-firefox-extension
 
+
+Click to Scroll not jump
+about:config
+select number
+ui.scrollToClick = 0
