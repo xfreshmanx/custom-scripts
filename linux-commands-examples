@@ -10,7 +10,7 @@ Umount ISO/IMG -
 Check which gpu active
 
     $ glxinfo | grep render
-    $ prime--run glxinfo | grep render
+    $ prime-run glxinfo | grep render
 
 Fix KDE shortcuts
     $ balooctl purge
