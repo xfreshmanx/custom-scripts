@@ -391,7 +391,10 @@ widget.use-xdg-desktop-portal = true                              # For KDE pick
 browser.newtabpage.activity-stream.logowordmark.alwaysVisible = true
 ```
    
-
+19. Qbittorrent Settings
+```
+QT_STYLE_OVERRIDE=fusion qbittorrent
+```
    
    
      
