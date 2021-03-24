@@ -28,3 +28,6 @@ Click to Scroll not jump
 about:config
 select number
 ui.scrollToClick = 0
+
+
+Calibri font fix: https://stefan.angrick.me/fix-rendering-of-microsoft-calibri-and-cambria-fonts-on-linux
