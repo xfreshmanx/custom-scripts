@@ -1,11 +1,14 @@
 @echo off  
-Echo Install Powertoys and Terminal  
-REM Powertoys  
+
+REM Powertoys
+Echo Install Powertoys and Terminal    
 winget install Microsoft.Powertoys  
 if %ERRORLEVEL% EQU 0 Echo Powertoys installed successfully.  
+
 REM Terminal  
+Echo Install Terminal  
 winget install Microsoft.WindowsTerminal  
-if %ERRORLEVEL% EQU 0 Echo Terminal installed successfully.   %ERRORLEVEL%
+if %ERRORLEVEL% EQU 0 Echo Terminal installed successfully.
 
 REM Firefox
 Echo Installing Firefox
@@ -72,13 +75,23 @@ Echo Installing Notepad++
 winget install -e --id Notepad++.Notepad++
 if %ERRORLEVEL% EQU 0 Echo Notepad++ installed successfully.
 
-REM Notepad++
-Echo Installing Notepad++
-winget install -e --id Notepad++.Notepad++
-if %ERRORLEVEL% EQU 0 Echo Notepad++ installed successfully.
-
 REM VeraCrypt
 Echo Installing VeraCrypt
 winget install -e --id Notepad++.Notepad++
 if %ERRORLEVEL% EQU 0 Echo VeraCrypt installed successfully.
+
+REM Git
+Echo Installing Git
+winget install -e --id Git.Git
+if %ERRORLEVEL% EQU 0 Echo Git installed successfully.
+
+REM Discord
+Echo Installing Discord
+winget install -e --id Discord.Discord
+if %ERRORLEVEL% EQU 0 Echo Discord installed successfully.
+
+REM KDEConnect
+Echo Installing KDEConnect
+winget install -e --id KDE.KDEConnect
+if %ERRORLEVEL% EQU 0 Echo KDEConnect installed successfully.
 
