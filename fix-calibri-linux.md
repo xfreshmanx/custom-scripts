@@ -9,9 +9,13 @@ https://stefan.angrick.me/fix-rendering-of-microsoft-calibri-and-cambria-fonts-o
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
 <fontconfig>
   <match target="font">
+<test name="family" compare="contains">
+  <string>Calibri</string>
+</test>
     <edit name="embeddedbitmap" mode="assign">
       <bool>false</bool>
     </edit>
   </match>
 </fontconfig>
+
 ```
