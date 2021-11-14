@@ -23,7 +23,7 @@ sudo vim /etc/apt/sources.list
 
 ##### Install necessary software
 ```
-sudo apt install synaptic breeze-gtk kde-gtk-config kde-config-gtk-style kde-config-gtk-style-preview vlc kdeconnect vim htop neofetch gstreamer1.0-nice gstreamer1.0-plugins-bad python-is-python3 python3-pip ncdu
+sudo apt install synaptic breeze-gtk kde-gtk-config kde-config-gtk-style kde-config-gtk-style-preview vlc kdeconnect vim htop neofetch gstreamer1.0-nice gstreamer1.0-plugins-bad python-is-python3 python3-pip ncdu thunderbird
 flatpak install flatseal dropbox joplin qbittorrent 
 ```
 [Setup bootsplash](https://wiki.debian.org/plymouth#Preinstallation "Setup bootsplash")
