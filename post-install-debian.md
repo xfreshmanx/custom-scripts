@@ -14,6 +14,7 @@ sudo apt-get remove --purge 'kontrast*', 'k3b*', 'akregator*', 'imagemagick*', '
 sudo apt install flatpak 
 sudo apt install gnome-software-plugin-flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo apt install plasma-discover-backend-flatpak
 ```
 
 ##### Remove *-src from sources
