@@ -5,7 +5,7 @@
 sudo apt update && sudo apt upgrade
 ```
 
-##### KDE bloat removalKDE bloat removal
+##### KDE bloat removal
 ```
 sudo apt-get remove --purge 'kontrast*', 'k3b*', 'akregator*', 'imagemagick*', 'kmail*', 'apper*', 'dragon*','juk*','contact*','kmousetool*','kmouth*','kwrite*','kmag*','konqueror*','sieveeditor*'
 ```
