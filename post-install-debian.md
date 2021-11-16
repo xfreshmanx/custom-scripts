@@ -72,7 +72,7 @@ sudo apt install wine wine32 wine64 libwine libwine:i386 fonts-wine wine-binfmt
 ```
 sudo apt install nvidia-detect
 nvidia-detect
-sudo apt install linux-headers-amd64 nvidia-driver firmware-misc-nonfree 
+sudo apt install linux-headers-amd64 nvidia-driver firmware-misc-nonfree mesa-utils mesa-utils-extra 
 sudo dpkg --add-architecture i386 && sudo apt update
 sudo apt install nvidia-driver-libs:i386
 sudo reboot
@@ -126,6 +126,32 @@ enable hwacceleration for mpv
 add in `$HOME/.config/mpv/mpv.conf`
 ```
 hwdec
+```
+##### NVIDIA PRIME
+```
+#!/bin/bash
+# put this script in /usr/local/bin/ as prime-run
+__NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=NVIDIA_only __GLX_VENDOR_LIBRARY_NAME=nvidia "$@" 
+```
+
+```
+xrandr --listproviders 
+glxinfo | grep "OpenGL renderer"
+prime-run glxinfo | grep "OpenGL renderer" 
+
+prime-run glxinfo | grep NVIDIA
+
+glxgears -info
+prime-run glxgears -info
+```
+
+###### OpenGL/Vulkan verification
+
+```
+glxinfo | grep OpenGL
+prime-run glxinfo | grep OpenGL
+vulkaninfo
+prime-run vulkaninfo
 ```
 
 
