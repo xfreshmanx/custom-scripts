@@ -17,7 +17,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 sudo apt install plasma-discover-backend-flatpak
 ```
 
-##### Remove *-src from sources
+##### Comment *-src from sources
 ```
 sudo vim /etc/apt/sources.list
 ```
@@ -39,7 +39,9 @@ sudo plymouth-set-default-theme -R bgrt
 ##### Mount Drives
 ```
 ls -l /dev/disk/by-uuid
+sudo blkid
 sudo vim /etc/fstab
+# UUID=0d8130f6-ad5a-4df7-9c44-5001f3a950d8 /storage/data   ext4    defaults,noatime,x-gfvs-show 0 0
 ```
 
 ##### Wine 
