@@ -93,7 +93,38 @@ warp-cli disconnect
 warp-cli set-license 									#backup license
 ```
 
+##### Hardware Acceleration
 
+```
+sudo apt install intel-gpu-tools i965-va-driver i965-va-driver-shaders nvidia-vdpau-driver libnvcuvid1 libnvidia-encode1 vdpauinfo vainfo gstreamer1.0-vaapi gstreamer1.0-plugins-bad 
+```
+put this in /etc/environment
+`sudo vim /etc/environment`
+
+```
+# Intel
+LIBVA_DRIVER_NAME=i965
+VDPAU_DRIVER=va_gl
+
+# NVIDIA
+#LIBVA_DRIVER_NAME=vdpau
+#VDPAU_DRIVER=nvidia
+```
+
+check hw acceleration usage
+```
+vainfo
+vdpauinfo
+sudo intel_gpu_top
+nvidia-smi -q | grep Decoder
+watch -n 1 'nvidia-smi -q | grep Decoder'
+
+```
+enable hwacceleration for mpv
+add in `$HOME/.config/mpv/mpv.conf`
+```
+hwdec
+```
 
 
 
