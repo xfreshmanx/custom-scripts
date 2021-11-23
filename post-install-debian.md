@@ -119,7 +119,7 @@ warp-cli set-license 									#backup license
 ##### Hardware Acceleration
 
 ```
-sudo apt install intel-gpu-tools i965-va-driver-shaders nvidia-vdpau-driver libnvcuvid1 libnvidia-encode1 vdpauinfo vainfo gstreamer1.0-vaapi gstreamer1.0-plugins-bad 
+sudo apt install intel-gpu-tools i965-va-driver-shaders nvidia-vdpau-driver libnvcuvid1 libnvidia-encode1 vdpauinfo vainfo gstreamer1.0-vaapi gstreamer1.0-plugins-bad vulkan-tools
 ```
 put this in /etc/environment
 `sudo vim /etc/environment`
