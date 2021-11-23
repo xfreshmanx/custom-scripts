@@ -1,3 +1,21 @@
+#### Minimal Plasma Install
+```
+sudo apt -y plasma-desktop plasma-nm
+sudo apt -y sddm-theme-breeze kwin-addons
+```
+
+Change realtek Driver
+```
+sudo apt install r8168-dkms  
+echo "blacklist r8169" | sudo tee -a /etc/modprobe.d/blacklist.conf  
+sudo vim /etc/NetworkManager/NetworkManager.conf  
+managed=true  
+sudo vim /etc/network/interfaces
+#iface enp4s0f1 inet dhcp				# comment this  
+```
+
+
+
 #### Debian KDE Bullseye Post Installation
 
 ##### Update System
