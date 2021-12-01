@@ -6,6 +6,7 @@ sudo apt -y sddm-theme-breeze kwin-addons
 
 Change realtek Driver
 ```
+lspci -k						# Check Driver version
 sudo apt install r8168-dkms  
 echo "blacklist r8169" | sudo tee -a /etc/modprobe.d/blacklist.conf  
 sudo vim /etc/NetworkManager/NetworkManager.conf  
