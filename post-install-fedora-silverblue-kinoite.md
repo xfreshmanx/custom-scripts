@@ -73,6 +73,7 @@ rpm-ostree rollback
 toolbox create
 toolbox enter
 podman stop $container_name
+toolbox rm $container_name
 ```
 
 Nvidia Drivers
