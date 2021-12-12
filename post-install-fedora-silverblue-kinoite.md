@@ -71,6 +71,7 @@ rpm-ostree rollback
 **toolbox**
 ```
 toolbox create
+toolbox list
 toolbox enter
 podman stop $container_name
 toolbox rm $container_name
