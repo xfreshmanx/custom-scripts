@@ -71,6 +71,9 @@ rpm-ostree rollback
 **toolbox**
 ```
 toolbox create
+toolbox create --container gaming
+toolbox create --distro fedora --release f30
+toolbox create --container myfed --release f35
 toolbox list
 toolbox enter
 podman stop $container_name
