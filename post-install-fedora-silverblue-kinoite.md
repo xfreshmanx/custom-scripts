@@ -93,10 +93,11 @@ sudo rpm-ostree kargs --append=rd.driver.blacklist=nouveau --append=modprobe.bla
 extraa [tips](https://discussion.fedoraproject.org/t/simplifying-updates-for-rpm-fusion-packages-and-other-packages-shipping-their-own-rpm-repos/30364http:// "tip")
 ```
 sudo rpm-ostree update \
-            --uninstall rpmfusion-free-release-34.0.3.noarch \
-            --uninstall rpmfusion-nonfree-release-34.0.2.noarch \
+            --uninstall rpmfusion-free-release-35-1.noarch \
+            --uninstall rpmfusion-nonfree-release-35-1.noarch \
             --install rpmfusion-free-release \
             --install rpmfusion-nonfree-release
+ # replace '-35-1' with installed version        
 ```
 
 **Gaming**
