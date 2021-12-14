@@ -90,7 +90,7 @@ sudo rpm-ostree install akmod-nvidia xorg-x11-drv-nvidia
 sudo rpm-ostree install akmod-nvidia xorg-x11-drv-nvidia-cuda #optional if using nvidia-smi or cuda
 sudo rpm-ostree kargs --append=rd.driver.blacklist=nouveau --append=modprobe.blacklist=nouveau --append=nvidia-drm.modeset=1 # this might not be needed at some point when silverblue will support the standard way to specify this.
 ```
-extraa [tips](https://discussion.fedoraproject.org/t/simplifying-updates-for-rpm-fusion-packages-and-other-packages-shipping-their-own-rpm-repos/30364http:// "tip")
+extraa [tips](https://discussion.fedoraproject.org/t/simplifying-updates-for-rpm-fusion-packages-and-other-packages-shipping-their-own-rpm-repos/30364)
 ```
 sudo rpm-ostree update \
             --uninstall rpmfusion-free-release-35-1.noarch \
