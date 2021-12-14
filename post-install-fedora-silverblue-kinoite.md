@@ -137,7 +137,10 @@ VDPAU_DRIVER=va_gl
 #LIBVA_DRIVER_NAME=vdpau
 #VDPAU_DRIVER=nvidia
 ```
-
+check hardware acceleration
+```
+sudo intel_gpu_top
+```
 
 
 
