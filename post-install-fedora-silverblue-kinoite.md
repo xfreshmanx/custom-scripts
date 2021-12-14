@@ -139,6 +139,7 @@ VDPAU_DRIVER=va_gl
 ```
 check hardware acceleration
 ```
+# play any video. if **Video** is moving than hardware acceleration working
 sudo intel_gpu_top
 ```
 
