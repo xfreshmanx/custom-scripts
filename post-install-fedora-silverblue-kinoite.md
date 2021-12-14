@@ -108,9 +108,35 @@ flatpak install flathub org.gnome.Platform.Compat.i386 org.freedesktop.Platform.
 flatpak install flathub io.github.arunsivaramanneo.GPUViewer
 flatpak install org.srb2.SRB2Kart
 ```
+**Hardware Acceleration for Intel Graphics 4600**
+```
+rpm-ostree install intel-gpu-tools libva-intel-driver libva-intel-hybrid-driver libva-utils libva-vdpau-driver libvdpau-va-gl mpv vdpauinfo
+```
+firefox
+enhanced-h264ify add-on firefox [enhanced-h264ify firefox](https://addons.mozilla.org/en-US/firefox/addon/enhanced-h264ify "enhanced-h264ify firefox")
+```
+about:config
+gfx.webrender.all -> true  
+media.ffmpeg.vaapi.enabled -> true  
+media.ffvpx.enabled -> false
+```
 
+mpv
+```
+mpv --hwdec=auto https://www.youtube.com/watch?v=MQcXEWPesAw
+```
+tips
+```
+vainfo
+sudo vim /etc/environment
+# Intel
+LIBVA_DRIVER_NAME=i965
+VDPAU_DRIVER=va_gl
 
-
+# NVIDIA
+#LIBVA_DRIVER_NAME=vdpau
+#VDPAU_DRIVER=nvidia
+```
 
 
 
