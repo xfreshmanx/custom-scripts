@@ -1,20 +1,20 @@
 
 Mount ISO/IMG -
 ```
-$ mount -o loop /ISOLATION.iso /MOUNTLOCATION
+mount -o loop /ISOLATION.iso /MOUNTLOCATION
 ```
 Umount ISO/IMG -
 ```
-$ udisksctl loop-delete -b /dev/loop1
+udisksctl loop-delete -b /dev/loop1
 ```
 Check which gpu active
 ```
-$ glxinfo | grep render
-$ prime-run glxinfo | grep render
+glxinfo | grep render
+prime-run glxinfo | grep render
 ```
 Fix KDE shortcuts
 ```   
-$ balooctl purge
+balooctl purge
 ```
 Reload Application launcher in KDE Plasma
 ```
