@@ -20,3 +20,7 @@ Reload Application launcher in KDE Plasma
 ```
 sudo update-desktop-database
 ```
+list local package without source/origin. Use synaptic or 
+```
+apt list --installed | grep -F "$(gettext 'apt' '[installed,local]')"
+```
