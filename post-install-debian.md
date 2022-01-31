@@ -24,6 +24,41 @@ sudo vim /etc/network/interfaces
 sudo apt update && sudo apt upgrade
 ```
 
+##### Fix `Username Is Not In The Sudoers File
+To get root, then add your user to the sudo group, use:
+```
+su -
+usermod -aG sudo YOUR_USERNAME
+exit
+```
+or
+```
+su
+nano /etc/sudoers
+```
+
+Add your user below %sudo and pwfeedback, insults 
+EXAMPLE:
+```
+Defaults        env_reset,pwfeedback
+Defaults        mail_badpass
+Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+Defaults        insults
+
+# Allow members of group sudo to execute any command
+%sudo	ALL=(ALL:ALL) ALL
+pulsar    ALL=(ALL:ALL) ALL
+```
+
+##### Fastest mirror
+Find fastest mirrors. A list of mirrors ranked by speed will be places in your home directory
+Copy this list to  /etc/apt/sources.list
+```
+sudo apt install netselect-apt
+netselect-apt
+sudo apt-get update
+```
+
 ##### KDE bloat removal
 ```
 sudo apt-get remove --purge 'kontrast*', 'k3b*', 'akregator*', 'imagemagick*', 'kmail*', 'apper*', 'dragon*','juk*','contact*','kmousetool*','kmouth*','kwrite*','kmag*','konqueror*','sieveeditor*'
@@ -46,8 +81,8 @@ sudo vim /etc/apt/sources.list
 
 ##### Install necessary software
 ```
-sudo apt install synaptic breeze-gtk kde-gtk-config kde-config-gtk-style kde-config-gtk-style-preview vlc kdeconnect vim htop neofetch gstreamer1.0-nice gstreamer1.0-plugins-bad python-is-python3 python3-pip ncdu thunderbird stacer
-flatpak install flatseal dropbox joplin qbittorrent 
+sudo apt install synaptic breeze-gtk kde-gtk-config kde-config-gtk-style kde-config-gtk-style-preview vlc kdeconnect neovim htop neofetch gstreamer1.0-nice gstreamer1.0-plugins-bad python-is-python3 python3-pip ncdu thunderbird stacer 
+flatpak install flatseal dropbox joplin qbittorrent synaptic  gdebi rar unrar p7zip-rar 
 ```
 [Setup bootsplash](https://wiki.debian.org/plymouth#Preinstallation "Setup bootsplash")
 ```
@@ -65,11 +100,16 @@ sudo blkid
 sudo vim /etc/fstab
 # UUID=0d8130f6-ad5a-4df7-9c44-5001f3a950d8 /storage/data   ext4    defaults,noatime,x-gfvs-show 0 0
 ```
+##### 32-bit support
+Enable 32bit package downloads. ( Required for some applications )
+```
+sudo dpkg --add-architecture i386
+sudo apt update
+```
 
 ##### Wine 
 - wine from wine-hq install [wiki](https://wiki.winehq.org/Debian "wiki")
 ```
-sudo dpkg --add-architecture i386
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
 sudo echo "deb https://dl.winehq.org/wine-builds/debian/ bullseye main" >  /tmp/winehq.list
@@ -176,8 +216,24 @@ vulkaninfo
 prime-run vulkaninfo
 ```
 
-
-
+###### non-free codecs and other media components
+```
+sudo apt install ffmpeg
+sudo apt install libavcodec-extra
+sudo apt install ttf-mscorefonts-installer
+sudo apt install libdvdcss2
+sudo apt install libdvd-pkg
+sudo dpkg-reconfigure libdvd-pkg
+sudo apt install ffmpegthumbnailer
+sudo apt install ffmpegthumbs
+sudo apt install gstreamer1.0-plugins-bad
+sudo apt install gstreamer1.0-plugins-ugly
+sudo apt install gstreamer1.0-libav
+sudo apt install gstreamer1.0-tools
+sudo apt install gstreamer1.0-vaapi
+sudo apt install tumbler-plugins-extra
+sudo apt-get install kdegraphics-thumbnailers
+```
 
 
 
