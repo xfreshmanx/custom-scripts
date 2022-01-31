@@ -26,5 +26,5 @@ apt list --installed | grep -F "$(gettext 'apt' '[installed,local]')"
 ```
 check / size
 ```
-ncdu / --exclude /home --exclude /media --exclude /storage --exclude /run/times
+ncdu / --exclude /home --exclude /media --exclude /storage --exclude /run/timeshift
 ```
