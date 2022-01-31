@@ -24,3 +24,7 @@ list local package without source/origin. Use synaptic or
 ```
 apt list --installed | grep -F "$(gettext 'apt' '[installed,local]')"
 ```
+check / size
+```
+ncdu / --exclude /home --exclude /media --exclude /storage --exclude /run/times
+```
