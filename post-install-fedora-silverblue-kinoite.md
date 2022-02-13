@@ -143,13 +143,12 @@ check hardware acceleration
 sudo intel_gpu_top
 ```
 
+### Install software without layering
+[htop](https://koji.fedoraproject.org/koji/packageinfo?packageID=2056 "htop")
+[neofetch](https://github.com/dylanaraps/neofetch/releases "neofetch")
+[ncdu](https://koji.fedoraproject.org/koji/packageinfo?packageID=6127 "ncdu")
 
-
-
-
-
-
-
-
-
-
+```
+put bin in:
+~/.local/bin
+```
